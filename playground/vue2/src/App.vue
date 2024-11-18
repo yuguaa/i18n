@@ -1,32 +1,33 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">你好</router-link> |
-      <router-link to="/about">{{ '表达式' }}</router-link>
+      <div>你好</div>
+      <div>{{ '关于' }}</div>
+      <div>{{ msg }}</div>
+      <div>{{ text }}</div>
     </nav>
-    <router-view />
+    <div>
+      <button @click="changeMsg">更改msg</button>
+      <button @click="changeText">更改text</button>
+    </div>
   </div>
 </template>
-
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      msg: '欢迎来到我的网站',
+      text: `这是一个关于Vue2的项目`
+    }
+  },
+  methods: {
+    changeText() {
+      this.text = `${msg}这是一个关于Vue2的项目，现在时间是${new Date().toLocaleString()}`
+    },
+    changeMsg() {
+      this.msg = '你知道' + '是我啊' + new Date().toLocaleString() + '了吗'
     }
   }
 }
-</style>
+</script>

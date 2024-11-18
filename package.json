@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "run-s dev:*",
+    "dev:i18n-cli": "pnpm --filter @yugu/i18n-cli dev",
+    "build:i18n-cli": "pnpm --filter @yugu/i18n-cli build",
+    "release:i18n-cli": "pnpm --filter @yugu/i18n-cli release",
     "dev:i18n-core": "pnpm --filter @yugu/i18n-core dev",
     "build:i18n-core": "pnpm --filter @yugu/i18n-core build",
     "release:i18n-core": "pnpm --filter @yugu/i18n-core release",
@@ -12,8 +15,10 @@
     "build:i18n-vue": "pnpm --filter @yugu/i18n-vue build",
     "release:i18n-vue": "pnpm --filter @yugu/i18n-vue release",
     "playground": "run-p playground:*",
-    "playground:vue2": "pnpm --filter @playground/vue2 serve",
-    "playground:vue3": "pnpm --filter @playground/vue3 dev"
+    "start:vue2": "pnpm --filter @playground/vue2 serve",
+    "build:vue2": "pnpm --filter @playground/vue2 build",
+    "start:vue3": "pnpm --filter @playground/vue3 dev",
+    "build:vue3": "pnpm --filter @playground/vue3 build"
   },
   "keywords": [],
   "author": "",

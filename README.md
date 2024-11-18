@@ -1,2 +1,2 @@
-# npm-lib-monorepo
-npm包
+# i18n-monorepo
+i18n包

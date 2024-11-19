@@ -1,18 +1,11 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import babel from '@rollup/plugin-babel'
-import dts from 'vite-plugin-dts'
 export default defineConfig({
-  plugins: [
-    dts({
-      tsconfigPath: './tsconfig.json',
-      outDir: 'dist/types'
-    })
-  ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
-      name: 'testLib',
+      entry: resolve(__dirname, './index.js'),
+      name: 'YuguI18nCore',
       fileName: 'index',
       formats: ['es', 'amd', 'umd', 'iife', 'cjs', 'esm']
     },

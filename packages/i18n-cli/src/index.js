@@ -1,7 +1,10 @@
-const { program } = require('commander')
-const option = require('../package.json')
-const configCommand = require('./command/config')
-const parseCommand = require('./command/parse')
+import { program } from 'commander'
+import option from '../package.json' assert { type: 'json' }
+import configCommand from './command/config.js'
+import parseCommand from './command/parse.js'
+
+program.version(option.version)
+
 program
   .command('init')
   .alias('i')
@@ -18,10 +21,8 @@ program
     parseCommand(options)
   })
 
-program.command('*').action(function (cmd) {
+program.command('*').action(cmd => {
   console.log('unknown command "%s"', cmd)
 })
 
-program.version(option.version)
 program.parse(process.argv)
-module.exports = program

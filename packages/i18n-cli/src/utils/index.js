@@ -2,8 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import { pathToFileURL } from 'url';
 import log from './log.js'
-import { createRequire } from 'module'
-const require = createRequire(import.meta.url)
 const checkFileExist = filePath => {
   try {
     fs.accessSync(filePath)

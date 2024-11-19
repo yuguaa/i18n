@@ -6,8 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "i18n": "run-s i18n:init i18n:parse",
-    "i18n:init": "yugu-i18n-cli init --vue",
+    "i18n": "run-s i18n:parse",
+    "i18n:init": "yugu-i18n-cli init",
     "i18n:parse": "yugu-i18n-cli parse"
   },
   "dependencies": {

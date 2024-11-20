@@ -1,3 +1,3 @@
-export default function transformJs(js) {
-  console.log(`🚀 ~ js:`, js)
+export default function transformJs(fileData, options) {
+  return {}
 }

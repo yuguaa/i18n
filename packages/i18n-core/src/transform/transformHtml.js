@@ -1,3 +1,3 @@
-export default function transformHtml(html) {
-  console.log(`🚀 ~ html:`, html)
+export default function transformHtml(fileData, options) {
+  return {}
 }

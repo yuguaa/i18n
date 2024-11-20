@@ -1,3 +1,3 @@
-export default function transformReact(options) {
-  console.log(`🚀 ~ options`, options)
+export default function transformReact(fileData, options) {
+  return {}
 }

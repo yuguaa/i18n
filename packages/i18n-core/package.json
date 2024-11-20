@@ -3,11 +3,10 @@
   "version": "0.0.1",
   "description": "@yugu/i18n-core",
   "main": "dist/index.js",
-  "types": "./dist/types/**.d.ts",
-  "module": "dist/index.mjs",
+  "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
+      "import": "./dist/index.js",
       "require": "./dist/index.js"
     }
   },
@@ -33,6 +32,8 @@
   },
   "dependencies": {
     "chalk": "^5.3.0",
-    "glob": "^11.0.0"
+    "glob": "^11.0.0",
+    "path": "^0.12.7",
+    "progress-estimator": "^0.3.1"
   }
 }

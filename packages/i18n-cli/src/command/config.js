@@ -52,7 +52,7 @@ async function ask(filePath) {
 
   if (isExist) {
     result.isCover = await confirm({
-      message: `文件已存在，是否覆盖？`
+      message: `配置文件已存在，是否覆盖？`
     })
   }
 

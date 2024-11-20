@@ -1,26 +1,38 @@
-import path from 'path'
+import { extname } from 'path'
 import { getFiles } from '../utils/index.js'
 import transformVue from './transformVue.js'
-/**
- * @description transform //TODO
- * @param {Object} options
- * 需要返回国际化的中文json
- * 需要对ast进行处理，提取中文并且注入import语句到代码中
- */
+import transformJs from './transformJs.js'
+import log from '../utils/log.js'
 export default function transform(options) {
   const { entry, exclude } = options
-  console.log(`🚀 ~ entry, exclude:`, entry, exclude)
   const files = [].concat(entry).reduce((acc, cur) => {
-    const file = getFiles(cur, exclude).map(file => {
+    const file = getFiles(cur, exclude).map(el => {
       return {
-        filePath: file,
+        filePath: el,
         entry: cur,
-        ext: path.extname(file)
+        ext: extname(el)
       }
     })
     return acc.concat(file)
   }, [])
-  files.forEach(file => {
-    console.log(`🚀 ~ file:`, file.ext)
+
+  let collect = {}
+  files.forEach((file, index) => {
+    const { ext } = file
+    if (ext === '.vue') {
+      collect = {
+        ...collect,
+        ...transformVue(file, options)
+      }
+    } else if (ext === '.js') {
+      collect = {
+        ...collect,
+        ...transformJs(file, options)
+      }
+    } else {
+      log.error(`❌ ${file.filePath} 文件类型不支持`)
+    }
   })
+  log.success(`🎉 国际化收集 完成`)
+  return collect
 }

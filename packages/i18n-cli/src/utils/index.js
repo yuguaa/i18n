@@ -14,9 +14,7 @@ const checkFileExist = filePath => {
 async function getI18nConfig(filePath) {
   if (checkFileExist(filePath)) {
     filePath = path.resolve(process.cwd(), filePath)
-    console.log(`🚀 ~ filePath:`, filePath)
     const fileUrl = pathToFileURL(filePath).href;
-    console.log(`🚀 ~ fileUrl:`, fileUrl)
     return import(fileUrl)
   } else {
     log.error(`${filePath}文件不存在,请先生成配置文件`)

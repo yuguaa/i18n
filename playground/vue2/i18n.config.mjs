@@ -5,5 +5,6 @@ export default {
   importCode: "import { intl } from '@yugu/i18n-vue';",
   i18nObject: "intl",
   i18nMethod: "$t",
-  jsonPath: "ttt",
+  i18nPrefix: "i18n",
+  jsonPath: "src",
 };

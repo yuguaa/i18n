@@ -17,6 +17,7 @@ export default defineConfig({
       formats: ['es', 'amd', 'umd', 'iife', 'cjs', 'esm']
     },
     rollupOptions: {
+      external:['vue-i18n'],
       plugins: [
         babel({
           babelHelpers: 'bundled',
